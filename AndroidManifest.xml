@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.quickblox.sample.chat"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <permission android:name="com.quickblox.sample.chat.permission.C2D_MESSAGE"    
+        android:protectionLevel="signature" />
+ 	<uses-permission android:name="com.quickblox.sample.chat.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <application 
+        android:name=".ApplicationSingleton"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+		android:theme="@style/AppTheme">
+		
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.NewDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".ui.activities.RegistrationAct"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.DialogsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.DeviceDefault.Light"/>
+        <activity
+            android:name=".ui.activities.ChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+         <activity
+            android:name=".ui.activities.LoginAndPswdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".ui.activities.RegistrationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".ui.activities.SupportActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         
+         <activity
+            android:name=".ui.activities.LogOutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         
+         <activity
+            android:name=".ui.activities.sendMessage"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".ui.activities.vk"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+          
+         <receiver android:name="com.quickblox.sample.message.GcmBroadcastReceiver"
+             android:permission="com.google.android.c2dm.permission.SEND">
+		    <intent-filter>
+		        
+		         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		       
+		        
+		        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+		        <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+		        </intent-filter>
+		        
+		</receiver>
+		 <service android:name="com.quickblox.sample.message.GCMIntentService" />
+    </application>
+
+</manifest>

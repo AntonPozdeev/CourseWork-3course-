@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/loginEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="login"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/passwordEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:capitalize="none"
+        android:password="true"
+        android:singleLine="true" 
+        />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:text="Log in" />
+
+    <Button
+        android:id="@+id/SignUpButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:text="SIGN UP" />
+
+    <TextView
+        android:id="@+id/forgotPasswordView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:paddingLeft="15dp"
+        android:text="Forgot your password"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/LoginPswdViewError"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#FF0000"
+        android:paddingLeft="60dp"
+        android:paddingTop="4dp"
+        android:text="Fill out all fields correctly"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+</LinearLayout>
+

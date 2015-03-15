@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+        <item
+            android:id="@+id/choose"
+            android:checkable="true"
+            android:checked="true"
+            android:icon="@drawable/ic_launcher"
+            android:title="Do you want delete? this dialog?">
+            <menu>
+                <item
+                    android:id="@+id/chooseYes"
+                    android:title="Yes"/>
+                <item android:id="@+id/chooseNo"
+                    android:title="No"/>
+            </menu>
+        </item>
+</menu>
