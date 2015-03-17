@@ -281,8 +281,6 @@ public class DialogsActivity extends Activity{
 				    // Если отменили.
 				  }
 				}).create().show();		
-//			}
-//			else{}
 			break;
 		case R.id.support:
 			Intent intent3 = new Intent(DialogsActivity.this, SupportActivity.class);
@@ -328,7 +326,9 @@ public class DialogsActivity extends Activity{
             	 QBGroupChatManager.deleteDialog(dialogId, new QBEntityCallbackImpl<Void>() {
              	    @Override
              	    public void onSuccess() {
-             	 
+             	    	Intent intent = new Intent(DialogsActivity.this,DialogsActivity.class);
+             	    	startActivity(intent);
+             	    	finish();
              	    }
              	 
              	    @Override

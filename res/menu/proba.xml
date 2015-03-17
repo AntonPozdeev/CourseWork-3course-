@@ -1,9 +1,6 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:chat="http://schemas.android.com/apk/res-auto">
-    <!-- Single menu item 
-         Set id, icon and Title for each menu item
-    -->
     <item android:id="@+id/newchatMenu"
          android:title="New chat" />
  
@@ -14,15 +11,6 @@
  
     <item android:id="@+id/logoutMenu"
           android:title="Log out" >
-         <!-- <menu
-              android:title = "Do you want logout from chat?">
-                <item
-                    android:id="@+id/YesLogoutSubMenu"
-                    android:title="Yes"/>
-                <item
-                    android:id="@+id/NoLogoutSubMenu"
-                    android:title="No"/>
-            </menu>-->
     </item>  
  
     <item android:id="@+id/exitMenu"

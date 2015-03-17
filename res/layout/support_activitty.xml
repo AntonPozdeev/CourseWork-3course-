@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_weight="0.60"
-        android:text="Здравствуйте,я знаю,что программа имеет кучу недоделок,но вы строго не судите, я работаю над её улучшением. Если при пользовании программой у вас возникнут ошибки или неполадки, буду вам очень признателен,если вы сообщите мне ошибку,прислав её описание, если сможете,присылайте скриншоты."
+        android:text="Здравствуйте,я знаю,что программа имеет кучу недоделок,но вы строго не судите, я работаю над её улучшением. Если при использовании программы у вас возникнут ошибки или неполадки, буду вам очень признателен,если вы сообщите мне ошибку,прислав её описание, если сможете,присылайте скриншоты."
         android:textColor="#000000"
         android:textSize="20sp" />
 
@@ -16,9 +16,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="vk: vk.com/antonio_pozdeev\n
-mail: anton-pozdeev@mail.ru\n
-Created by Anton Pozdeev!"
+        android:text="vk: vk.com/antonio_pozdeev\nmail: anton-pozdeev@mail.ru\nCreated by Anton Pozdeev!"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FF0000"
         android:textSize="20sp" />

@@ -50,6 +50,7 @@ public class RegistrationActivity extends Activity {
     public static String UserLogin = null;
     public static String UserPassword = null;
     public static String UserPhone = null;
+    public boolean flag=false;
     static int i = 0;
 	private QBChatService chatService;
 	static final int AUTO_PRESENCE_INTERVAL_IN_SECONDS = 30;
@@ -104,10 +105,12 @@ public class RegistrationActivity extends Activity {
         user.setPassword(UserPassword);
         user.setPhone(UserPhone);
         QBAuth.createSession(new QBEntityCallbackImpl<QBSession>(){
-        	@Override
+        	
+			@Override
         	public void onSuccess(QBSession session, Bundle args) {
         		// save current user
 		        //
+        		flag=true;
 		        user.setId(session.getUserId());
 		        ((ApplicationSingleton)getApplication()).setCurrentUser(user);
 		        final int code = ((int)(Math.random()*899)-100);
@@ -168,9 +171,9 @@ public class RegistrationActivity extends Activity {
 	                final String regId = GCMRegistrar.getRegistrationId(RegistrationActivity.this);
 	                if (regId.equals("")) {
 	                    GCMRegistrar.register(RegistrationActivity.this,  "240590367572");
-	                    Toast.makeText(getApplicationContext(), "non registered",Toast.LENGTH_LONG).show();
+	                    Toast.makeText(getApplicationContext(), "App is not registered",Toast.LENGTH_LONG).show();
 	                } else {
-	                    Toast.makeText(getApplicationContext(), "Already registered",Toast.LENGTH_LONG).show();
+	                    Toast.makeText(getApplicationContext(), "App is already registered",Toast.LENGTH_LONG).show();
 //	                    GCMRegistrar.register(RegistrationActivity.this,  "240590367572");
 	                    // Subscribe to Push Notifications
 	                    subscribeToPushNotifications(regId);
@@ -272,7 +275,13 @@ public class RegistrationActivity extends Activity {
       }
         
     public void onBackPressed(){
-    	
+    	if(flag){
+    		flag=false;
+    		Intent intent = new Intent(RegistrationActivity.this, RegistrationAct.class);
+            startActivity(intent);
+            finish();
+    	}
+    	else{}
     }
 }
     
