@@ -29,7 +29,7 @@
          android:title="Exit" />
     
      <item android:id="@+id/removeMenu"
-          android:title="Remove yourth" />
+          android:title="Remove account" />
      
      <item android:id="@+id/support"
          android:title="Support"/>

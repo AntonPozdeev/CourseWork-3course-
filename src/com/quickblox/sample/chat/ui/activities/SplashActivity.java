@@ -135,6 +135,7 @@ public class SplashActivity extends Activity {
             QBChatService.init(this);
         }
         chatService = QBChatService.getInstance();
+        
         // create QB user
         //
         

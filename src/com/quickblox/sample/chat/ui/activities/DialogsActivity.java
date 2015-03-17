@@ -253,7 +253,7 @@ public class DialogsActivity extends Activity{
 				  if(value.equals(SplashActivity.USER_PASSWORD)){
 					  new AlertDialog.Builder(DialogsActivity.this)
 				        .setTitle("delete dialog")
-				        .setMessage("Do you really want delete yourth user?")
+				        .setMessage("Do you really want delete your account?")
 				        .setNegativeButton(android.R.string.no, null)
 				        .setPositiveButton(android.R.string.yes,new DialogInterface.OnClickListener() {
 				            public void onClick(DialogInterface arg0, int arg1) {

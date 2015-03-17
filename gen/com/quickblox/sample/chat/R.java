@@ -2508,7 +2508,7 @@ containing a value of this type.
         public static final int LoginViewError=0x7f080080;
         public static final int PswdCnfrViewError=0x7f080081;
         public static final int RegistrationButton=0x7f08007e;
-        public static final int SettingsMenu=0x7f0800cc;
+        public static final int SettingsMenu=0x7f0800c6;
         public static final int SignUpButton=0x7f080083;
         public static final int action_bar=0x7f08005c;
         public static final int action_bar_activity_content=0x7f080037;
@@ -2596,7 +2596,7 @@ containing a value of this type.
         public static final int emailEdit=0x7f080075;
         public static final int emailTextView=0x7f080074;
         public static final int end=0x7f080033;
-        public static final int exitMenu=0x7f0800ce;
+        public static final int exitMenu=0x7f0800c8;
         public static final int expand_activities_button=0x7f08004d;
         public static final int expanded_menu=0x7f080053;
         public static final int fl_inner=0x7f0800b3;
@@ -2623,20 +2623,16 @@ containing a value of this type.
         public static final int loginButton=0x7f080082;
         public static final int loginEdit=0x7f080077;
         public static final int loginTextView=0x7f080076;
-        public static final int logoutMenu=0x7f0800cd;
+        public static final int logoutMenu=0x7f0800c7;
         public static final int manualOnly=0x7f080041;
         public static final int match_parent=0x7f08000e;
         public static final int meLabel=0x7f08006e;
-        public static final int menu1=0x7f0800c6;
-        public static final int menu2=0x7f0800ca;
-        public static final int menugroup1=0x7f0800c5;
-        public static final int menugroup2=0x7f0800c9;
         public static final int messageEdit=0x7f08006b;
         public static final int messagesContainer=0x7f08006d;
         public static final int middle=0x7f080032;
         public static final int monochrome=0x7f080016;
         public static final int never=0x7f08002a;
-        public static final int newchatMenu=0x7f0800cb;
+        public static final int newchatMenu=0x7f0800c5;
         public static final int none=0x7f080000;
         public static final int normal=0x7f080003;
         public static final int pager=0x7f080071;
@@ -2658,7 +2654,7 @@ containing a value of this type.
         public static final int pull_to_refresh_sub_text=0x7f0800b7;
         public static final int pull_to_refresh_text=0x7f0800b6;
         public static final int radio=0x7f080056;
-        public static final int removeMenu=0x7f0800cf;
+        public static final int removeMenu=0x7f0800c9;
         public static final int right=0x7f080021;
         public static final int roomImage=0x7f0800ac;
         public static final int roomName=0x7f0800ad;
@@ -2690,10 +2686,8 @@ containing a value of this type.
         public static final int split_action_bar=0x7f080038;
         public static final int standard=0x7f080019;
         public static final int strict_sandbox=0x7f08000b;
-        public static final int submenuNo=0x7f0800c8;
-        public static final int submenuYes=0x7f0800c7;
         public static final int submit_area=0x7f080067;
-        public static final int support=0x7f0800d0;
+        public static final int support=0x7f0800ca;
         public static final int tabMode=0x7f080023;
         public static final int terrain=0x7f080005;
         public static final int textView=0x7f0800a4;
@@ -2798,9 +2792,7 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int deletedialog=0x7f0d0000;
-        public static final int popupmenu=0x7f0d0001;
-        public static final int proba=0x7f0d0002;
-        public static final int rooms=0x7f0d0003;
+        public static final int proba=0x7f0d0001;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f050000;
