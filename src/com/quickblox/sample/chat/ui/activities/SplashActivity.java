@@ -61,16 +61,11 @@ public class SplashActivity extends Activity {
     boolean lo=true;
     static final int AUTO_PRESENCE_INTERVAL_IN_SECONDS = 30;
     final QBUser user = new QBUser();
-//    File file;
-    
     private QBChatService chatService;
-//    String li;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////
         String login=null,password=null;
         login = readFile("login");
         password = readFile("pswd");
@@ -90,7 +85,6 @@ public class SplashActivity extends Activity {
        }
 
     private void subscribeToPushNotifications(String regIdq) {
-		// TODO Auto-generated method stub
     	String deviceId = ((TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
         
         QBMessages.subscribeToPushNotificationsTask(regIdq, deviceId, QBEnvironment.DEVELOPMENT, null, new QBEntityCallbackImpl<ArrayList<String>>() {
@@ -148,26 +142,9 @@ public class SplashActivity extends Activity {
         	
             @Override
             public void onSuccess(QBSession session, Bundle args) {
-//            	AppSession.startSession(LoginType.EMAIL, user, token);
-                // save current user
-            	
-            	/////////////////
-                
-//            	try {
-//            	   token = BaseService.getBaseService().getToken();
-//            	    Toast.makeText(getApplicationContext(), token, Toast.LENGTH_LONG).show();
-//            	    if(token == null){
-//            	        // recreate session here
-//            	    	Log.d("token", token);
-//            	    	Toast.makeText(getApplicationContext(), token, Toast.LENGTH_LONG).show();
-//            	    }
-//            	} catch (BaseServiceException e) {
-//            	    e.printStackTrace();
-//            	    Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-//            	}
                 user.setId(session.getUserId());
                 ((ApplicationSingleton)getApplication()).setCurrentUser(user);
-//////////////////////////////////////////
+
 //                GCMRegistrar.unregister(getApplicationContext());
                 GCMRegistrar.checkDevice(SplashActivity.this);
                 GCMRegistrar.checkManifest(SplashActivity.this);
@@ -194,12 +171,6 @@ public class SplashActivity extends Activity {
                 Toast.makeText(getApplicationContext(),"create session errors: " + errors.toString(),Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(SplashActivity.this, LoginAndPswdActivity.class);
                 startActivityForResult(intent, 1);
-//                try {
-//					Thread.sleep(3000);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
             }
         });
     }
@@ -271,13 +242,10 @@ public class SplashActivity extends Activity {
                 // go to Dialogs screen
                 //
                 User_Id = user.getId();
-//                Integer a = user.getId();
                 Intent intent = new Intent(SplashActivity.this, DialogsActivity.class);
-//                intent.putExtra("id", a);
                 startActivity(intent);
                writeFile(user.getLogin(),"login");
                writeFile(user.getPassword(),"pswd");
-//                finish();
             }
 
             @Override
@@ -285,12 +253,6 @@ public class SplashActivity extends Activity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this);
                 dialog.setMessage("chat login errors: " + errors).create().show();
                 Toast.makeText(getApplicationContext(),"chat login errors: " + errors.toString() ,Toast.LENGTH_LONG).show();
-//                try {
-//					Thread.sleep(3000);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
             }
         });
     }

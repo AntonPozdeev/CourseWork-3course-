@@ -122,7 +122,6 @@ public class RegistrationActivity extends Activity {
 		        m.setSubject("This is an email sent using my Mail JavaMail wrapper from an Android device."); 
 		        m.setBody(Integer.toString(code)); 
 		        try { 
-//		          m.addAttachment("/sdcard/bday.jpg"); 
 		          if(m.send()) { 
 		            Toast.makeText(getApplicationContext(), "Email was sent successfully.", Toast.LENGTH_LONG).show(); 
 		          } else { 
@@ -132,37 +131,31 @@ public class RegistrationActivity extends Activity {
 		          Log.e("MailApp", "Could not send email", e); 
 		          Toast.makeText(getApplicationContext(), "Could not send email" + e.toString(), Toast.LENGTH_LONG).show(); 
 		        } 
-		        final int e;
-		        
-//		        while (i!=2){
-		        	final EditText input = new EditText(RegistrationActivity.this);
-//		        	input.setInputType()
-			        AlertDialog.Builder builder = new AlertDialog.Builder(RegistrationActivity.this);
-		            builder.setTitle("Control")
-							.setMessage("Write code:")
-							.setView(input)// Добавим поле ввода
-		                    .setNeutralButton("Confirm",
-		                            new DialogInterface.OnClickListener() {
-		                                public void onClick(DialogInterface dialog,
-		                                        int id) {
-		                                			int vved = 0;
-		                                			try {
-		                                				vved =Integer.valueOf(input.getText().toString());
-		                                			} catch (Exception e2) {
-		                                				// TODO: handle exception
-		                                			}
-		                                			if(code==vved){
-		                                				Toast.makeText(getApplicationContext(), "Code is equals", Toast.LENGTH_LONG).show();
-		                                				signUpUser(user);
-		                                			}
-		                                			else {
-		                                					Toast.makeText(getApplicationContext(), "Code is not equals", Toast.LENGTH_LONG).show();
-		                                					Intent intent = new Intent(RegistrationActivity.this,RegistrationAct.class);
-		                                					startActivity(intent);
-		                                					finish();
-		                                					}
-		                                			}
-		                            }).create().show();
+		        final EditText input = new EditText(RegistrationActivity.this);
+		        AlertDialog.Builder builder = new AlertDialog.Builder(RegistrationActivity.this);
+		        builder.setTitle("Control")
+						.setMessage("Write code:")
+						.setView(input)// Добавим поле ввода
+		                .setNeutralButton("Confirm",
+		                		new DialogInterface.OnClickListener() {
+		                	public void onClick(DialogInterface dialog,int id) {
+		                		int vved = 0;
+		                        try {
+		                        	vved =Integer.valueOf(input.getText().toString());
+		                        	} catch (Exception e2) {
+		                        		}
+		                        if(code==vved){
+		                        	Toast.makeText(getApplicationContext(), "Code is equals", Toast.LENGTH_LONG).show();
+		                            signUpUser(user);
+		                            }
+		                            else {
+		                            	Toast.makeText(getApplicationContext(), "Code is not equals", Toast.LENGTH_LONG).show();
+		                                Intent intent = new Intent(RegistrationActivity.this,RegistrationAct.class);
+		                                startActivity(intent);
+		                                finish();
+		                                }
+		                        }
+		                	}).create().show();
 		            // Sign up to Chat
 		        
 		            GCMRegistrar.checkDevice(RegistrationActivity.this);

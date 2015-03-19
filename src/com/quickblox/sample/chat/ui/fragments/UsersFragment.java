@@ -68,19 +68,8 @@ public class UsersFragment extends Fragment implements QBEntityCallback<ArrayLis
                 // Create new group dialog
                 //
             	QBDialog dialogToCreate = null;
-//                try {
-                	dialogToCreate = new QBDialog();
-//				} catch (Exception e) {
-//					Toast.makeText(getActivity(), "erooooor2:" + e.toString(), Toast.LENGTH_LONG).show();
-//				}
-//				}
-            	
-//                try {
-                	dialogToCreate.setName(usersListToChatName());
-//				} catch (Exception e) {
-//					Toast.makeText(getActivity(), "erooooor3:" + e.toString(), Toast.LENGTH_LONG).show();
-//				}
-                
+                dialogToCreate = new QBDialog();
+                dialogToCreate.setName(usersListToChatName());
                 if(usersAdapter.getSelected().size() == 1){
                     dialogToCreate.setType(QBDialogType.PRIVATE);
                 }else {

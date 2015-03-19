@@ -78,7 +78,7 @@ public class SettingsActivity extends Activity {
 										if(oldPassword.getText().toString().equals(SplashActivity.USER_PASSWORD)){
 											if(oldPassword.getText().toString().equals(newPassword.getText().toString())){
 												Toast.makeText(getApplicationContext(),
-										        		"The OLD PASSWORD must not coincide with a NEW PASSWORD",
+										        		"The OLD PASSWORD must not coincide with the NEW PASSWORD",
 										                Toast.LENGTH_LONG).show();
 												flag = false;
 												return;

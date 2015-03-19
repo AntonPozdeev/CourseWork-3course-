@@ -78,9 +78,7 @@ public class LoginAndPswdActivity extends Activity implements OnItemSelectedList
 			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				final EditText input = new EditText(LoginAndPswdActivity.this);
-//				final EditText input = new EditText(RegistrationActivity.this);
 				
 				AlertDialog.Builder builder = new AlertDialog.Builder(LoginAndPswdActivity.this);
 	            builder.setTitle("Control")
@@ -160,23 +158,6 @@ public class LoginAndPswdActivity extends Activity implements OnItemSelectedList
 		// TODO Auto-generated method stub
 		
 	}
-//	public QBUser login(String socialProvider, String accessToken,
-//			  String accessTokenSecret) throws QBResponseException, BaseServiceException {
-//			  QBUser user;
-//			 
-//			  QBSession session = QBAuth.createSession();
-//			 
-//			  user = QBUsers.signInUsingSocialProvider(socialProvider, accessToken, accessTokenSecret);
-//			  user.setPassword(session.getToken());
-//			 
-//			  String token = QBAuth.getBaseService().getToken();
-//			 
-//			  AppSession.startSession(LoginType.FACEBOOK, user, token);
-//			 
-//			  return user;
-//			}
-	//выход из приложения!!
-	//удалить эту строчку как сможешь сделать правильный выход!
 	public void onBackPressed() {
         new AlertDialog.Builder(this)
             .setTitle("Выйти из приложения?")
@@ -184,8 +165,10 @@ public class LoginAndPswdActivity extends Activity implements OnItemSelectedList
             .setNegativeButton(android.R.string.no, null)
             .setPositiveButton(android.R.string.yes, new OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
-                     //SomeActivity - имя класса Activity для которой переопределяем onBackPressed(); 
-                	finish();
+                	 LoginAndPswdActivity.super.onBackPressed();
+                     finish();
+                     moveTaskToBack(true);
+                     System.runFinalizersOnExit(true);
                      System.exit(0);
                 }
             }).create().show();

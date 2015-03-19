@@ -57,7 +57,8 @@ import org.jivesoftware.smack.filter.PacketFilter;
 
 public class DialogsActivity extends Activity{
 
-    private ListView dialogsListView;
+    final QBChatService chatService = QBChatService.getInstance();;
+	private ListView dialogsListView;
     private ProgressBar progressBar;
     String usId;
     boolean a;
@@ -227,17 +228,13 @@ public class DialogsActivity extends Activity{
                      //SomeActivity - имя класса Activity для которой переопределяем onBackPressed(); 
                      DialogsActivity.super.onBackPressed();
                      moveTaskToBack(true);
-
-//                     super.onDestroy();
-
+                     chatService.destroy();
                      System.runFinalizersOnExit(true);
                      System.exit(0);
                 }
             }).create().show();
 			break;
 		case R.id.removeMenu:
-//			if(NetworkChangeReceiver.fla==true){
-				boolean d = false;
 				final EditText input = new EditText(this);
 				input.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
 				new AlertDialog.Builder(this)
@@ -305,7 +302,7 @@ public class DialogsActivity extends Activity{
                      DialogsActivity.super.onBackPressed();
                      finish();
                      moveTaskToBack(true);
-
+                     chatService.destroy();
 //                     super.onDestroy();
 
                      System.runFinalizersOnExit(true);
